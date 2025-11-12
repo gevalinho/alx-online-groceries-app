@@ -78,6 +78,25 @@ export default function HomeLayout() {
           tabBarIcon: ({ color }) => <FontAwesome name="user-o" size={20} color={color} />,
         }}
       />
+
+   {/* 🚫 Hidden Screens (not in bottom tab) */}
+      <Tabs.Screen name="product/[id]" options={{ href: null }} />
+      <Tabs.Screen name="checkout" options={{ href: null }} />
+      <Tabs.Screen name="filters" options={{ href: null }} />
+      <Tabs.Screen name="search" options={{ href: null }} />
+      <Tabs.Screen name="beverages" options={{ href: null }} />
+      <Tabs.Screen name="order-accepted" options={{ href: null }} />
+      <Tabs.Screen name="order-failed" options={{ href: null }} />
+      <Tabs.Screen name="index" options={{ href: null }} />
     </Tabs>
+
+
+
+
+    // </Tabs>
+
+
+
   );
 }
+
