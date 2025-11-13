@@ -32,7 +32,7 @@ export default function OrderAccepted() {
       {/* Track Order */}
       <TouchableOpacity
         className="bg-[#34A853] py-4 w-full rounded-2xl items-center mb-5"
-        onPress={() => router.push("/(home)/orders")}
+        onPress={() => router.push("/(home)/shop")}
       >
         <Text className="text-white font-semibold text-[16px]">
           Track Order

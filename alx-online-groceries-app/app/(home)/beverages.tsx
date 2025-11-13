@@ -12,42 +12,42 @@ import {
 
 const beverages = [
   {
-    id: "1",
+    id: "8",
     name: "Diet Coke",
     info: "355ml, Price",
     price: 1.99,
     image: require("../../assets/images/diet_coke.png"),
   },
   {
-    id: "2",
+    id: "7",
     name: "Sprite Can",
     info: "325ml, Price",
     price: 1.5,
     image: require("../../assets/images/sprite_can.png"),
   },
   {
-    id: "3",
+    id: "9",
     name: "Apple & Grape Juice",
     info: "2L, Price",
     price: 15.99,
     image: require("../../assets/images/apple_grape_juice.png"),
   },
   {
-    id: "4",
+    id: "10",
     name: "Orange Juice",
     info: "2L, Price",
     price: 15.99,
     image: require("../../assets/images/orange_juice.png"),
   },
   {
-    id: "5",
+    id: "10",
     name: "Coca Cola Can",
     info: "355ml, Price",
     price: 4.99,
     image: require("../../assets/images/coke_can.png"),
   },
   {
-    id: "6",
+    id: "11",
     name: "Pepsi Can",
     info: "330ml, Price",
     price: 4.99,
@@ -62,7 +62,8 @@ export default function Beverages() {
     <TouchableOpacity
       className="bg-white rounded-2xl p-3 shadow-sm w-[47%] mb-4"
       activeOpacity={0.8}
-      onPress={() => router.push({ pathname: "/(home)/product-detail", params: { id: item.id } })}
+      // onPress={() => router.push({ pathname: "/(home)/product-detail", params: { id: item.id } })}
+      onPress={() => router.push(`/(home)/product/${item.id}`)}
     >
       <Image source={item.image} className="w-full h-28" resizeMode="contain" />
       <Text className="text-[#1F232B] font-semibold mt-2">{item.name}</Text>

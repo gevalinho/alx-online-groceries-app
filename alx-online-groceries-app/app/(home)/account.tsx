@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity, FlatList } from "react-native";
 import { Stack, useRouter } from "expo-router";
 import { Ionicons, Feather } from "@expo/vector-icons";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 type Row = { id: string; label: string; icon: keyof typeof Ionicons.glyphMap; href?: string };
 
@@ -38,20 +39,22 @@ export default function AccountScreen() {
       <Stack.Screen options={{ title: "Account" }} />
 
       {/* Header / profile card */}
+      <SafeAreaView className="flex-1 bg-[#F9FAFB]" edges={["top"]}>
       <View className="bg-white px-4 py-5 flex-row items-center justify-between">
         <View className="flex-row items-center gap-3">
           <Image
-            source={{ uri: "https://i.pravatar.cc/100?img=12" }}
+            source={require("../../assets/images/geval.png")}
             className="w-12 h-12 rounded-full"
           />
           <View>
+            
             <View className="flex-row items-center gap-2">
               <Text className="text-[16px] font-semibold text-[#1F232B]">
-                Afsar Hossen
+                Geva-eval Inya Egbe
               </Text>
               <Feather name="edit-3" size={14} color="#34A853" />
             </View>
-            <Text className="text-[12px] text-[#8A8E98]">imshuvo97@gmail.com</Text>
+            <Text className="text-[12px] text-[#8A8E98]">gevalinho1@gmail.com</Text>
           </View>
         </View>
 
@@ -60,7 +63,7 @@ export default function AccountScreen() {
           <Ionicons name="settings-outline" size={20} color="#1F232B" />
         </View>
       </View>
-
+</SafeAreaView>
       {/* List */}
       <View className="mt-3">
         <FlatList

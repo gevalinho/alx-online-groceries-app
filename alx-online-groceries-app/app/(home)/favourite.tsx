@@ -3,6 +3,7 @@ import { View, Text, Image, TouchableOpacity, FlatList } from "react-native";
 import { Stack } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
 import { useCartStore } from "../../store/cartStore";
+import { SafeAreaView } from "react-native-safe-area-context";
 
 const favouriteItems = [
   {
@@ -74,9 +75,11 @@ export default function FavouriteScreen() {
       <Stack.Screen options={{ headerShown: false }} />
 
       {/* Header */}
+      <SafeAreaView className="flex-1 bg-[#F9FAFB]" edges={["top"]}>
       <View className="flex-row items-center justify-center py-5 border-b border-gray-100">
         <Text className="text-[18px] font-semibold text-[#1F232B]">Favourite</Text>
       </View>
+      </SafeAreaView>
 
       {/* Favourites List */}
       <FlatList

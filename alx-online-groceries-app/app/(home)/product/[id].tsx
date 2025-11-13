@@ -67,6 +67,41 @@ const products = [
               description:
       "Fresh red bell peppers are packed with vitamin C and antioxidants for a healthy diet.",
             },
+              {
+    id: "7",
+    name: "Sprite Can",
+    info: "325ml, Price",
+    price: 1.5,
+    image: require("../../../assets/images/sprite.png"),
+  },
+  {
+    id: "8",
+    name: "Diet Coke",
+    info: "355ml, Price",
+    price: 1.99,
+    image: require("../../../assets/images/dietcoke.png"),
+  },
+  {
+    id: "9",
+    name: "Apple & Grape Juice",
+    info: "2L, Price",
+    price: 15.5,
+    image: require("../../../assets/images/applejuice.png"),
+  },
+  {
+    id: "10",
+    name: "Coca Cola Can",
+    info: "325ml, Price",
+    price: 4.99,
+    image: require("../../../assets/images/cocacola.png"),
+  },
+  {
+    id: "11",
+    name: "Pepsi Can",
+    info: "330ml, Price",
+    price: 4.99,
+    image: require("../../../assets/images/pepsi.png"),
+  },
 ];
 
 export default function ProductDetail() {

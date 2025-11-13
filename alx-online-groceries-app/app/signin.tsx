@@ -66,7 +66,7 @@ export default function SignIn() {
           </View>
 
           {/* 🔵 Social Buttons */}
-          <TouchableOpacity
+          <TouchableOpacity onPress={() => router.push("/(home)/shop")}
             className="bg-[#4285F4] py-3 rounded-xl flex-row items-center justify-center mb-3"
             activeOpacity={0.8} 
           >
@@ -81,7 +81,7 @@ export default function SignIn() {
             </Text>
           </TouchableOpacity>
 
-          <TouchableOpacity
+          <TouchableOpacity onPress={() => router.push("/(home)/shop")}
             className="bg-[#1877F2] py-3 rounded-xl flex-row items-center justify-center"
             activeOpacity={0.8} 
           >

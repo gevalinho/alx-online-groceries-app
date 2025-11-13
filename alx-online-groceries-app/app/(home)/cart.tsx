@@ -9,6 +9,8 @@ import {
 import { Stack, useRouter } from "expo-router";
 import { Feather, Ionicons } from "@expo/vector-icons";
 import { useCartStore } from "../../store/cartStore";
+import { SafeAreaView } from "react-native-safe-area-context";
+
 
 export default function CartScreen() {
 
@@ -25,7 +27,7 @@ export default function CartScreen() {
 
 
   const renderItem = ({ item }: { item: any }) => (
-    <View className="flex-row justify-between items-center py-4 border-b border-gray-100">
+    <View className="flex-row justify-between items-center py-4 px-8 border-b border-gray-100">
       <View className="flex-row items-center">
         <Image
           source={item.image}
@@ -80,11 +82,13 @@ export default function CartScreen() {
       <Stack.Screen options={{ headerShown: false }} />
 
       {/* Header */}
+      <SafeAreaView className="flex-1 bg-[#F9FAFB]" edges={["top"]}>
       <View className="flex-row items-center justify-center py-5 border-b border-gray-100">
         <Text className="text-[18px] font-semibold text-[#1F232B]">
           My Cart
         </Text>
       </View>
+      </SafeAreaView>
 
       {/* Empty State */}
       {items.length === 0 ? (
