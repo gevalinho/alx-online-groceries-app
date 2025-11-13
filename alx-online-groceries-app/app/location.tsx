@@ -1,19 +1,19 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Picker } from "@react-native-picker/picker";
 import { Stack, useRouter } from "expo-router";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
-    Image,
-    KeyboardAvoidingView,
-    Platform,
-    Text,
-    TouchableOpacity,
-    View,
+  Image,
+  KeyboardAvoidingView,
+  Platform,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 export default function LocationScreen() {
   const router = useRouter();
-  const [zone, setZone] = useState("Banasree");
+  const [zone, setZone] = useState("Nigeria");
   const [area, setArea] = useState("");
 
   const handleSubmit = () => {
@@ -63,10 +63,10 @@ export default function LocationScreen() {
             onValueChange={(val) => setZone(val)}
             dropdownIconColor="#1F232B"
           >
-            <Picker.Item label="Banasree" value="Banasree" />
-            <Picker.Item label="Dhanmondi" value="Dhanmondi" />
-            <Picker.Item label="Gulshan" value="Gulshan" />
-            <Picker.Item label="Uttara" value="Uttara" />
+            <Picker.Item label="Nigeria" value="Nigeria" />
+            <Picker.Item label="South Africa" value="southafrica" />
+            <Picker.Item label="Ghan" value="Ghana" />
+            <Picker.Item label="Cameroon" value="Cameroon" />
           </Picker>
         </View>
 

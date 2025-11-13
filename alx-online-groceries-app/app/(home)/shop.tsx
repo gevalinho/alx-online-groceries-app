@@ -256,7 +256,7 @@
 
 import { Ionicons } from "@expo/vector-icons";
 import { Stack, useRouter } from "expo-router";
-import React, { useState, useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
   FlatList,
   Image,
@@ -374,7 +374,7 @@ export default function ShopScreen() {
         <View className="flex-row items-center">
           <Ionicons name="location-outline" size={18} color="#1F232B" />
           <Text className="ml-2 text-[16px] font-semibold text-[#1F232B]">
-            Dhaka, Banasree
+            Nigeria, Lagos
           </Text>
         </View>
       </View>
