@@ -1,6 +1,6 @@
 import { Ionicons } from "@expo/vector-icons";
 import { Stack, useRouter } from "expo-router";
-import React, { useState } from "react";
+import { useState } from "react";
 import {
   Image,
   ScrollView,
@@ -99,7 +99,7 @@ export default function SignIn() {
           {/* 🦶 Footer */}
           <View className="mt-10 mb-8 flex-row justify-center">
             <Text className="text-gray-500">Don’t have an account? </Text>
-            <TouchableOpacity onPress={() => router.push("/(home)/shop")}>
+            <TouchableOpacity onPress={() => router.push("/signup")}>
               <Text className="text-[#34A853] font-semibold">Join now</Text>
             </TouchableOpacity>
           </View>

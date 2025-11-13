@@ -10,6 +10,7 @@ import {
   SafeAreaView,
 } from "react-native";
 
+
 const beverages = [
   {
     id: "8",
@@ -80,11 +81,12 @@ export default function Beverages() {
   return (
     <SafeAreaView className="flex-1 bg-[#F9FAFB]">
       {/* Header */}
+      
       <View className="flex-row justify-between items-center px-4 py-3">
         <TouchableOpacity onPress={() => router.back()}>
           <Ionicons name="chevron-back" size={24} color="#1F232B" />
         </TouchableOpacity>
-        <Text className="text-lg font-semibold text-[#1F232B]">Beverages</Text>
+        <Text className="text-lg font-semibold text-[#1F232B] py-10">Beverages</Text>
         <TouchableOpacity>
           <Feather name="shopping-cart" size={20} color="#1F232B" />
         </TouchableOpacity>
