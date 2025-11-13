@@ -68,7 +68,7 @@ export default function SignIn() {
           {/* 🔵 Social Buttons */}
           <TouchableOpacity
             className="bg-[#4285F4] py-3 rounded-xl flex-row items-center justify-center mb-3"
-            activeOpacity={0.8}
+            activeOpacity={0.8} 
           >
             <Ionicons
               name="logo-google"
@@ -83,7 +83,7 @@ export default function SignIn() {
 
           <TouchableOpacity
             className="bg-[#1877F2] py-3 rounded-xl flex-row items-center justify-center"
-            activeOpacity={0.8}
+            activeOpacity={0.8} 
           >
             <Ionicons
               name="logo-facebook"

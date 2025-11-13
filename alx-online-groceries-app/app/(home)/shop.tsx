@@ -1,3 +1,7 @@
+
+
+
+
 import { Ionicons } from "@expo/vector-icons";
 import { Stack, useRouter } from "expo-router";
 import React from "react";
@@ -30,7 +34,7 @@ const DATA = [
     price: 4.99,
     image: require("../../assets/images/apple.png"),
   },
-  { type: "section", title: "Best Selling" },
+  // { type: "section", title: "Best Selling" },
   {
     type: "product",
     id: "3",
@@ -45,24 +49,35 @@ const DATA = [
     name: "Ginger",
     info: "250gm, Priceg",
     price: 4.99,
-    image: require("../../assets/images/apple.png"),
+    image: require("../../assets/images/ginger.png"),
   },
-  { type: "section", title: "Groceries" },
+];
+
+// 🥦 Groceries horizontal section data
+const GROCERIES = [
   {
-    type: "product",
-    id: "5",
-    name: "Beef Bone",
-    info: "1kg, Priceg",
-    price: 4.99,
-    image: require("../../assets/images/beef.png"),
+    id: "1",
+    name: "Pulses",
+    image: require("../../assets/images/pulses.png"),
+    bgColor: "#FFF6ED",
   },
   {
-    type: "product",
-    id: "6",
-    name: "Broiler Chicken",
-    info: "1kg, Priceg",
-    price: 4.99,
-    image: require("../../assets/images/chicken.png"),
+    id: "2",
+    name: "Rice",
+    image: require("../../assets/images/rice.png"),
+    bgColor: "#F2F9F3",
+  },
+  {
+    id: "3",
+    name: "Vegetables",
+    image: require("../../assets/images/vegetables.png"),
+    bgColor: "#EBF8FF",
+  },
+  {
+    id: "4",
+    name: "Fruits",
+    image: require("../../assets/images/bananas.png"),
+    bgColor: "#FFF1F1",
   },
 ];
 
@@ -108,6 +123,49 @@ const ProductCard = ({ item }: { item: any }) => {
   );
 };
 
+// 🥬 Groceries Section Component
+const GroceriesSection = () => (
+  <View className="mt-6">
+    <SectionHeader title="Groceries" />
+    <FlatList
+      data={GROCERIES}
+      keyExtractor={(item) => item.id}
+      horizontal
+      showsHorizontalScrollIndicator={false}
+      contentContainerStyle={{ paddingHorizontal: 20 }}
+      renderItem={({ item }) => (
+        <TouchableOpacity
+          style={{
+            backgroundColor: item.bgColor,
+            width: 130,
+            height: 100,
+            borderRadius: 16,
+            marginRight: 12,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          activeOpacity={0.8}
+        >
+          <Image
+            source={item.image}
+            style={{ width: 45, height: 45, marginBottom: 8 }}
+            resizeMode="contain"
+          />
+          <Text
+            style={{
+              fontSize: 15,
+              fontWeight: "600",
+              color: "#1F232B",
+            }}
+          >
+            {item.name}
+          </Text>
+        </TouchableOpacity>
+      )}
+    />
+  </View>
+);
+
 // 🏬 Shop Screen
 export default function ShopScreen() {
   const renderItem = ({ item }: { item: any }) => {
@@ -147,7 +205,7 @@ export default function ShopScreen() {
         className="w-[90%] h-32 mt-5 self-center rounded-2xl"
       />
 
-      {/* 🛍️ Product List */}
+      {/* 🛍️ Scroll Content */}
       <ScrollView
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ paddingHorizontal: 16, paddingBottom: 100 }}
@@ -156,6 +214,34 @@ export default function ShopScreen() {
           data={DATA}
           renderItem={renderItem}
           keyExtractor={(_, index) => index.toString()}
+          numColumns={2}
+          scrollEnabled={false}
+          columnWrapperStyle={{ justifyContent: "space-between" }}
+        />
+
+        {/* 🧺 Groceries Horizontal Section */}
+        <GroceriesSection />
+
+        {/* 🥩 More Grocery Items */}
+        <FlatList
+          data={[
+            {
+              id: "5",
+              name: "Beef Bone",
+              info: "1kg, Priceg",
+              price: 4.99,
+              image: require("../../assets/images/beef.png"),
+            },
+            {
+              id: "6",
+              name: "Broiler Chicken",
+              info: "1kg, Priceg",
+              price: 4.99,
+              image: require("../../assets/images/chicken.png"),
+            },
+          ]}
+          renderItem={({ item }) => <ProductCard item={item} />}
+          keyExtractor={(item) => item.id}
           numColumns={2}
           scrollEnabled={false}
           columnWrapperStyle={{ justifyContent: "space-between" }}

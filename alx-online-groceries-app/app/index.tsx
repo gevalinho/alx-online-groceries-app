@@ -1,119 +1,47 @@
+import { useRouter } from "expo-router";
 import React from "react";
-import {
-  Dimensions,
-  Image,
-  ImageBackground,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View
-} from "react-native";
-import {
-  SafeAreaProvider,
-  SafeAreaView,
-} from "react-native-safe-area-context";
+import { ImageBackground, Text, TouchableOpacity, View } from "react-native";
 
+export default function OnboardingScreen() {
+  const router = useRouter();
 
-export default function IndexScreen() {
   return (
-    <SafeAreaProvider>
-      <SafeAreaView style={{ flex: 1 }}>
-        <ImageBackground
-          source={require("../assets/images/onbording_bg.png")}
-          style={styles.background}
-          resizeMode="cover"
-        >
-          {/* Company Logo */}
-          <View style={styles.companyLogo}>
-            <Image source={require("../assets/images/logo.png")} />
+    <View className="flex-1 bg-gray-100">
+      <ImageBackground
+        // source={{ uri: "https://images.unsplash.com/photo-1601046003300-50f9f8a3b5b4" }} // replace with your exported Figma asset if available
+        source={require("../assets/images/onbording_bg.png")}
+        
+        resizeMode="cover"
+        className="flex-1 justify-end"
+      >
+        {/* Overlay for readability */}
+        <View className="bg-black/40 px-6 py-10 rounded-t-3xl">
+          <View className="items-center mb-6">
+            {/* Logo / Icon */}
+            <View className="w-12 h-12 bg-white rounded-full items-center justify-center mb-3">
+              <Text className="text-2xl">🥕</Text>
+            </View>
+
+            <Text className="text-white text-2xl font-bold text-center">
+              Welcome to our store
+            </Text>
+            <Text className="text-gray-200 text-center mt-2">
+              Get your groceries in as fast as one hour
+            </Text>
           </View>
 
-          {/* Text Group */}
-          <View style={styles.textGroup}>
-            <Text style={styles.textLarge}>Find your favorite place here</Text>
-            <Text style={styles.textSmall}>The best prices for over 2</Text>
-            <Text style={styles.textSmall}>million properties worldwide</Text>
-          </View>
-
-          {/* Button Group */}
-          <View style={styles.buttonGroup}>
-            <TouchableOpacity style={styles.button}>
-              <Text style={{ ...styles.textSmall, color: "black" }}>
-                Join here
-              </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.transparentButton}>
-              <Text style={styles.textSmall}>Sign In</Text>
-            </TouchableOpacity>
-          </View>
-
-          {/* Footer Text */}
-          <View style={{ alignItems: "center", paddingVertical: 20 }}>
-            <Text style={{ color: "white" }}>Continue to home</Text>
-          </View>
-        </ImageBackground>
-      </SafeAreaView>
-    </SafeAreaProvider>
+          {/* Button */}
+          <TouchableOpacity
+            onPress={() => router.push("/signin")}
+            className="bg-[#34A853] py-4 rounded-2xl"
+            activeOpacity={0.8}
+          >
+            <Text className="text-white text-center text-lg font-semibold">
+              Get Started
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </ImageBackground>
+    </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  background: {
-    flex: 1,
-    justifyContent: "center",
-    width: "100%",
-    height: Dimensions.get("window").height,
-  },
-  companyLogo: {
-    width: "100%",
-    alignItems: "center",
-    padding: 20,
-    marginBottom: 50,
-  },
-  textGroup: {
-    alignItems: "center",
-  },
-  textLarge: {
-    color: "white",
-    fontWeight: "800",
-    fontSize: 40,
-    textAlign: "center",
-    marginBottom: 12,
-  },
-  textSmall: {
-    color: "white",
-    fontSize: 18,
-    fontWeight: "200",
-    textAlign: "center",
-  },
-  transparentButton: {
-    borderColor: "white",
-    borderWidth: 2,
-    borderRadius: 40,
-    paddingVertical: 15,
-    paddingHorizontal: 5,
-    alignItems: "center",
-    fontSize: 20,
-    flex: 1,
-  },
-  button: {
-    borderColor: "white",
-    borderWidth: 2,
-    borderRadius: 40,
-    paddingVertical: 15,
-    paddingHorizontal: 5,
-    alignItems: "center",
-    fontSize: 20,
-    backgroundColor: "white",
-    flex: 1,
-  },
-  buttonGroup: {
-    flexDirection: "row",
-    gap: 20,
-    paddingHorizontal: 20,
-  },
-});

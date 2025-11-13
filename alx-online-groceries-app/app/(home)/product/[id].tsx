@@ -39,6 +39,34 @@ const products = [
     description:
       "Fresh red bell peppers are packed with vitamin C and antioxidants for a healthy diet.",
   },
+  {
+    type: "product",
+    id: "4",
+    name: "Ginger",
+    info: "250gm, Priceg",
+    price: 4.99,
+    image: require("../../../assets/images/ginger.png"),
+    description:
+      "Fresh red bell peppers are packed with vitamin C and antioxidants for a healthy diet.",
+  },
+   {
+              id: "5",
+              name: "Beef Bone",
+              info: "1kg, Priceg",
+              price: 4.99,
+              image: require("../../../assets/images/beef.png"),
+              description:
+      "Fresh red bell peppers are packed with vitamin C and antioxidants for a healthy diet.",
+            },
+            {
+              id: "6",
+              name: "Broiler Chicken",
+              info: "1kg, Priceg",
+              price: 4.99,
+              image: require("../../../assets/images/chicken.png"),
+              description:
+      "Fresh red bell peppers are packed with vitamin C and antioxidants for a healthy diet.",
+            },
 ];
 
 export default function ProductDetail() {
